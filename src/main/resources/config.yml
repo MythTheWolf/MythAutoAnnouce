@@ -1,0 +1,10 @@
+#The Hostname/Server IP For your mySQL Database
+SQL-HOST: 'localhost'
+#The port number that the server runs on, default MySQL port is 3306
+SQL-PORT: '3306'
+#The name of the database to use, note that this Database must ALREADY be created.
+SQL-DATABASE: 'main'
+#Username to use to connect to the database
+SQL-USER: 'root'
+#Password for that user
+SQL-PASSWORD: 'root'

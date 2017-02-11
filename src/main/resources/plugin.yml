@@ -1,0 +1,10 @@
+name: MythAnnounce
+version: 1.0
+main: com.myththewolf.MythBroadcast.MythBroadCast
+commands:
+ createcast:
+     description: Creates a Broadcast
+     aliases: []
+ deletecast:
+     description: Deletes a Broadcast
+     aliases: []

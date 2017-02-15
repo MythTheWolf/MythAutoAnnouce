@@ -42,6 +42,7 @@ public class createBroadcast implements CommandExecutor {
 			dbc.addEvent(args[0], Long.parseLong(args[1]), Utils.makeString(args, 2));
 			MythThread mt = new MythThread(pl);
 			mt.createThread(args[0]);
+			sender.sendMessage("Cast created!");
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

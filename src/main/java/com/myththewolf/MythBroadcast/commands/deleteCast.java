@@ -35,6 +35,7 @@ public class deleteCast implements CommandExecutor {
 			dbc.deleteEvent(args[0]);
 			MythThread mt = new MythThread(pl);
 			mt.cancelThread(args[0]);
+			sender.sendMessage("Cast deleted");
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

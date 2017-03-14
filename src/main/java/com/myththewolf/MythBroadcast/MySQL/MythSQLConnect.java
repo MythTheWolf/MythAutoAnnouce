@@ -23,7 +23,7 @@ public class MythSQLConnect {
 		if(!isConnected())
 		{
 		try{
-			con = DriverManager.getConnection("jdbc:mysql://" + HOST + ":" + PORT + "/" + DATABASE  + "?useUnicode=true&characterEncoding=UTF-8", USER,
+			con = DriverManager.getConnection("jdbc:mysql://" + HOST + ":" + PORT + "/" + DATABASE  + "?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true", USER,
 					PASS);
 			return con;
 			
@@ -51,6 +51,7 @@ public class MythSQLConnect {
 			try{
 				ps = (PreparedStatement) con.prepareStatement("CREATE TABLE IF NOT EXISTS `MythAnnounce_Jobs` ( `ID` INT NOT NULL AUTO_INCREMENT ,`key` VARCHAR(255) NOT NULL , `text` VARCHAR(255) NOT NULL , `ticks` BIGINT NOT NULL , PRIMARY KEY (`ID`)) ENGINE = InnoDB;");
 				ps.executeUpdate();
+				ps.close();
 			}catch(SQLException e){
 				Bukkit.getConsoleSender().sendMessage("SERVERE: Fatal MySQL Error!");
 				e.printStackTrace();

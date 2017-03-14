@@ -13,6 +13,7 @@ public class DatabaseCommands {
 		ps = (PreparedStatement) con.prepareStatement("SELECT * FROM MythAnnounce_Jobs WHERE `key` = ?");
 		ps.setString(1, name);
 		rs = ps.executeQuery();
+		ps.close();
 		return rs.next();
 	}
 
@@ -22,12 +23,14 @@ public class DatabaseCommands {
 		ps.setString(2, text);
 		ps.setLong(3, interval);
 		ps.executeUpdate();
+		ps.close();
 	}
 
 	public void deleteEvent(String key) throws SQLException {
 		ps = (PreparedStatement) con.prepareStatement("DELETE FROM MythAnnounce_Jobs WHERE `key` = ?");
 		ps.setString(1, key);
 		ps.executeUpdate();
+		ps.close();
 		
 	}
 }
